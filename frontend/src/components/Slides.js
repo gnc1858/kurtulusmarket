@@ -3,16 +3,16 @@ import styled from "styled-components"
 import ArrowLeftOutlinedIcon from '@material-ui/icons/ArrowLeftOutlined';
 import ArrowRightOutlinedIcon from '@material-ui/icons/ArrowRightOutlined';
 import {sliderItems} from "../data"
-import {Theme} from "../utils/ThemeContext"
+import {InitialState} from "../context/Context"
 
 
 const Container=styled.div`
-width: 100%;
+width: 100vw;
 height: 100vh;
 display:flex;
 position: relative;
 overflow: hidden;
-background-color:${props=>(props.theme==="light"?  "rgba(241, 226, 195, 1)":"gray")};
+background-color:${props=>(props.theme==="light"?  "rgba(239, 240, 240, 0.74)":"rgba(134, 138, 149, 0.74)")};
 `
 const Arrow=styled.div`
  width:50px;
@@ -82,73 +82,48 @@ const Desc=styled.p`
 
 `
 
-const Button=styled.button`
- font-size:20px;
- padding:10px;
- border-radius:10px;
- cursor:pointer;
- font-weight:600;
- background-color:#18a5c4;
- transition:all .5s ease-in-out;
-
- &:hover{
-   border-color:#e8a156;
- }
 
 
-`
+
+
 
 
 const Slides = () => {
  const [slideIndex,setSlideIndex]=useState(0);
- const [isButtonHovered,setIsButtonHovered]=useState(false);
- const [addSelected,setAddSelected]=useState([]);
- //set local storage for selected items🐞 
-
- const theme=useContext(Theme);
+ const theme=useContext(InitialState).theme;
 
  
 
+ useEffect(()=>{
+  
+   const ınterval=setInterval(()=>{
+      handleClick("right")
+   },4000)
+
+   return ()=> clearInterval(ınterval);
+
+ })
+  
+
+   
+  
+
+ 
 
   
 
-    useEffect(()=>{
-      if(!isButtonHovered) {
 
-        const interval=setInterval(()=>{
-            handleClick("right")
-        },5000)
-  
-        return ()=>clearInterval(interval);
 
-      }
-  
-    })
-
+ 
   
 
-
-
-  function handleClick(direction){
-      if(direction==="right"){
-          setSlideIndex(slideIndex<2 ? slideIndex+1 : 0)
-      
-      }
-  
-    
-      if(direction==="left"){
-          setSlideIndex(slideIndex>0 ? slideIndex-1 : 2)
-
+  function handleClick(direct){
+    if(direct==="right"){
+        slideIndex<2 ? setSlideIndex((slideIndex)=>slideIndex+1):setSlideIndex(0)
     }
-  
-
-
-  }
-
-  //Sepete Ekle -- slide section
-
-  function handleItemClick(id){
-    setAddSelected((addSelected)=>[...addSelected,Number(id)])
+    if(direct==="left" ){
+        slideIndex>0 ? setSlideIndex((slideIndex)=>slideIndex-1):setSlideIndex(2)
+    }
   }
 
  return (
@@ -169,12 +144,7 @@ const Slides = () => {
       <DescContainer>
        <Title>{item.title}</Title>
        <Desc>{item.desc}</Desc>
-       <Button 
-       onMouseOver={()=>setIsButtonHovered(true)} 
-       onMouseOut={()=>setIsButtonHovered(false)}
-       onClick={()=>handleItemClick(item.id)}
-       
-       >{addSelected.includes(Number(item.id)) ? "Sepetim":"Sepete Ekle"}</Button>
+    
       
 
       </DescContainer>

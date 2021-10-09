@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
 
-dotenv.config({path:"./../../.env"})
+dotenv.config({path:".env"})//for productıon
 
 const connectDB=async()=>{
  try{

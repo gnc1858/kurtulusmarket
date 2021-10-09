@@ -9,6 +9,7 @@
     "@material-ui/icons": "4.11.2",
     "bcryptjs": "2.4.3",
     "colors": "1.4.0",
+    "deepcopy": "2.1.0",
     "dotenv": "10.0.0",
     "express": "4.17.1",
     "express-async-handler": "1.1.4",
@@ -24,7 +25,7 @@
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build":"npm run --prefix frontend build ",
+    "vercel": "npm install && npm run --prefix frontend vercel",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
   },

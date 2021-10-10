@@ -12,7 +12,7 @@ height: 100vh;
 display:flex;
 position: relative;
 overflow: hidden;
-background-color:${props=>(props.theme==="light"?  "rgba(239, 240, 240, 0.74)":"rgba(134, 138, 149, 0.74)")};
+background-color:${props=>(props.theme==="light"?  "rgba(239, 240, 240, 0.74)":"rgba(116, 122, 137, 0.91)")};
 `
 const Arrow=styled.div`
  width:50px;

@@ -1,16 +1,16 @@
 import React,{useContext,useState,useEffect} from 'react'
-import styled , { keyframes } from "styled-components"
+import styled  from "styled-components"
 import {categories} from "../data.js"
 import CategoryItems from "./CategoryItem"
 import {InitialState} from "../context/Context"
 import {items} from "../data"
-import SearchIcon from '@material-ui/icons/Search';
+
 
 
 const MainContainer=styled.div`
 display:flex;
 flex-direction:column;
-background-color:${props=>(props.theme==="light"?  "rgba(239, 240, 240, 0.74)":"rgba(134, 138, 149, 0.74)")};
+background-color:${props=>(props.theme==="light"?  "rgba(239, 240, 240, 0.74)":"rgba(116, 122, 137, 0.91)")};
 width:100vw;
 min-height:100vh;
 `

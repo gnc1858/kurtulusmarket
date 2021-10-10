@@ -7,6 +7,10 @@ import CheckoutItem from "./CheckoutItem"
 
 const Container=styled.div`
  display:flex;
+ height:100%;
+ min-height:100vh;
+ width:100%;
+  background:${props=>(props.theme==="light" ? "rgba(239, 240, 240, 0.74)":"rgba(116, 122, 137, 0.91)")};
 `
 
 const Items=styled.div`
@@ -25,18 +29,26 @@ const Button=styled.button``
 
 
 function Checkout() {
- const ıtemIds=useContext(InitialState).ıtemIds
+ const InitialS=useContext(InitialState)
+ const ıtemIds=InitialS.ıtemIds
+ const theme=InitialS.theme
+ 
+
  const basket=items.filter(item => ıtemIds.includes(item.id))
+
  const basketLength=basket.length
   
  return (
-   (basketLength <=0 ? <h2 style={{textAlign: 'center',marginTop:"20%"}} >Sepetin Boş Gözüküyor... </h2>: 
-  <Container>
+    <Container theme={theme}>
 
+    {basketLength <=0 ? <h2 style={{marginTop:"20%",marginLeft: "35%"}} >Sepetin Boş Gözüküyor... </h2>: 
+    <>
    <Items>
 
     {basket.map((ıtem)=>(
+       <div key={ıtem.id}>
        <CheckoutItem ıtem={ıtem}/>
+       </div>
 
     ))}
    </Items>
@@ -47,8 +59,9 @@ function Checkout() {
        <Button>Siparişi Tamamla</Button>
 
     </Summary>
+    </>
+    }
 </Container>
-   )
  )
 }
 

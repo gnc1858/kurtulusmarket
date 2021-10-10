@@ -1,7 +1,7 @@
 html{
  height:100%;
  width:100%;
- background-color: rgb(238, 224, 193);
+ background-color:inherit;
   
 }
 *,::before,::after{

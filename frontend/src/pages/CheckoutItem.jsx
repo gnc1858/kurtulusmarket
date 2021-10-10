@@ -5,7 +5,7 @@ import {InitialState,UpdateState} from "../context/Context"
 import {items} from "../data"
 
 
-const Wrapper=styled.div`
+const Wrapper=styled.li`
 
 
  padding:20px;

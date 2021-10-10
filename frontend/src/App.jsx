@@ -1,8 +1,8 @@
-import React,{createContext,useContext} from 'react'
+import React from 'react'
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Route ,Switch} from "react-router-dom";
 import styled from 'styled-components'
-import {InitialState} from "./context/Context" 
+
 import Checkout from './pages/Checkout';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
@@ -18,7 +18,7 @@ const MainContainer=styled.div`
 
 
 const App = () => {
- const loginState=useContext(InitialState).isLoginActive;
+
 
 
   return (

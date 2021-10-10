@@ -14,7 +14,7 @@ import {UpdateState,InitialState} from "../context/Context"
 const Container=styled.div`
  width: 100vw;
  height: 60px;
- background-color:${props=>(props.theme==="light" ? "rgba(239, 240, 240, 0.74)":"rgba(134, 138, 149, 0.74)")};
+ background-color:${props=>(props.theme==="light" ? "rgba(239, 240, 240, 0.74)":"rgba(116, 122, 137, 0.91)")};
  border-bottom:2px solid #46484d;
  
 

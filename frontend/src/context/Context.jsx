@@ -11,6 +11,7 @@ const StateContext = ({children}) => {
  const [utils,setUtils]=useState(currentState ? currentState :{
     theme:"dark",
     isLoginActive:false,
+    isUserLoggedIn:false,
     ıtemIds:[]
  });
  
@@ -32,6 +33,13 @@ const StateContext = ({children}) => {
       }))
    }
  
+   else if(util==="userstate"){
+        setUtils((utils)=>({
+          ...utils,
+          isUserLoggedIn:!utils.isUserLoggedIn
+      }))
+
+   }
 
 
   //🐞 add-remove-update item--> move below part to OrderContext  

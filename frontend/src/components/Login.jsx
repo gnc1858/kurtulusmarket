@@ -139,9 +139,11 @@ background-color:rgb(50,53,70);
 
 
 const Login = () => {
-
+ 
  const toggle=useContext(UpdateState)
- const isActive=useContext(InitialState).isLoginActive 
+ const Initial=useContext(InitialState)
+ const isActive=Initial.isLoginActive
+ 
 
  const [email,setEmail]=useState("")
  const [password,setPassword]=useState("")
@@ -161,6 +163,7 @@ const Login = () => {
 
  const regex=RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
 
+ 
  
 
 
@@ -202,6 +205,10 @@ const Login = () => {
    localStorage.clear();
 
    const response= await login(email, password)
+
+   setEmail("")
+   setPassword("")
+
    if(response===401) {
       setShowError("401")
    }
@@ -211,6 +218,8 @@ const Login = () => {
    else if (response.name==="admin"&&response.isAdmin){
       history.push('/admin')
       update("login")
+      update("userstate")
+      setIsDisabled(true)
    }
 
  }
@@ -229,12 +238,16 @@ const Login = () => {
 
         <Email >
            <Label>Email Adresi</Label>
-           <InputEmail onChange={(e)=>handleEmailChange(e)}></InputEmail>
+           <InputEmail 
+           onChange={(e)=>handleEmailChange(e)}
+           value={email}></InputEmail>
         </Email>
 
         <Password>
           <Label>Şifre</Label>
-          <InputPassword onChange={(e)=>handlePasswordChange(e)}></InputPassword> 
+          <InputPassword
+           onChange={(e)=>handlePasswordChange(e)}
+           value={password}></InputPassword> 
    
         </Password>
 

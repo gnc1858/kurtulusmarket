@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import styled from "styled-components"
 import {Link,useHistory} from "react-router-dom"
 
@@ -75,21 +75,35 @@ const Navbar = () => {
 
  const utils=useContext(InitialState);
  const theme=utils.theme;
+ const isUserLoggedIn=utils.isUserLoggedIn;
  const toggle=useContext(UpdateState)
  const basketLength=utils.ıtemIds.length
 
  const userInfo=JSON.parse(localStorage.getItem('userInfo'))
  const history=useHistory()
+ 
 
  
 
-function handleLogin(){
-
-  if(userInfo && userInfo.name==="admin"){
+function handleLogin(e){
+  
+  if(isUserLoggedIn && e.target.textContent==="Çıkış" ){
+    
+    localStorage.clear("userInfo")
+    toggle("userstate")
+    
+    console.log(isUserLoggedIn)
+  }
+  else if(userInfo && userInfo.name==="admin"){
+  
     history.push("/admin")
+    if(!isUserLoggedIn) toggle("userstate");
+    console.log("I am here",isUserLoggedIn)
 
   }
-  else  toggle("login")
+  else  { 
+    toggle("login")
+  }
 }
 
 
@@ -109,7 +123,7 @@ function handleLogin(){
       </Left>
 
       <Right>
-       <MenuItem onClick={()=>handleLogin()} >Giriş</MenuItem>
+       <MenuItem onClick={(e)=>handleLogin(e)} >{isUserLoggedIn ? "Çıkış":"Giriş"}</MenuItem>
     
        <MenuItem>
         <Badge badgeContent={basketLength && typeof basketLength==="number" ? basketLength:0} color="primary">

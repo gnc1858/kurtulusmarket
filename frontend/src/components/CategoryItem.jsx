@@ -19,10 +19,17 @@ const Item=styled.div`
  border-radius:8px;
 `
 const Title=styled.h2`
+ font-size:24px;
 `
 
 const Image=styled.img`
 height:240px;
+`
+
+const Price=styled.p`
+ font-size:20px;
+ padding:5px;
+font-weight:bold;
 `
 const Button=styled.button`
  font-size:20px;
@@ -87,6 +94,7 @@ function handleDirect(){
        <Item>
          <Title>{item.title}</Title>
          <Image src={item.img}></Image>
+         <Price>{item.price}</Price>
           <Button
             onClick={(e)=>(e.target.innerText==="Sepetim" ? handleDirect(e):handleClick(item.id))}
             

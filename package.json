@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": "http://127.0.0.1:5000",
   "type": "module",
   "dependencies": {
     "@material-ui/core": "4.12.3",
@@ -40,7 +41,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "vercel": "npm run start",
     
-    "preserver": "npm run build --prefix frontend",
+    "build": "npm run build --prefix frontend",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
   },

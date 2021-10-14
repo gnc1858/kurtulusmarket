@@ -43,6 +43,8 @@ const Left=styled.div`
 const Logo=styled.h1`
 font-weight:600;
 color:rgba(35, 103, 124, 1);
+font-size:40px;
+
 
 `
 
@@ -91,8 +93,9 @@ function handleLogin(e){
     
     localStorage.clear("userInfo")
     toggle("userstate")
+     history.push("/")
     
-    console.log(isUserLoggedIn)
+   
   }
   else if(userInfo && userInfo.name==="admin"){
   

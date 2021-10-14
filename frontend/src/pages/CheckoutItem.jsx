@@ -1,8 +1,8 @@
 import React,{useContext,useState} from 'react'
 import styled from "styled-components"
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import {InitialState,UpdateState} from "../context/Context"
-import {items} from "../data"
+import {UpdateState} from "../context/Context"
+
 
 
 const Wrapper=styled.li`
@@ -42,12 +42,16 @@ flex:1;
 display:flex;
 align-items:center;
 justify-content:center;
+font-size:18px;
+font-weight:600
 `
 const Price=styled.p`
 flex:1;
 display:flex;
 align-items:center;
 justify-content:center;
+font-size:18px;
+font-weight:600
 
 `
 
@@ -82,6 +86,7 @@ const CheckoutItem = ({ıtem}) => {
   const update=useContext(UpdateState)
 
   const [qty,setQty]=useState(1)
+  const [total,setTotal]=useState(0)
  
 
   function handleClick(action){

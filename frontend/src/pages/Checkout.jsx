@@ -20,12 +20,30 @@ flex:3;
 `
 
 const Summary=styled.div`
-flex:1
+flex:1;
+padding:10px;
 `
 
-const Total=styled.div``
+const Total=styled.div`
+font-size:24px;
+padding:5px;
+font-weight:600;
 
-const Button=styled.button``
+`
+
+const Button=styled.button`
+ padding:10px;
+ font-size:20px;
+ font-weight:600;
+ border:2px solid gray;
+ border-radius:6px;
+ background-color:rgba(35, 103, 124, 1);
+ cursor:pointer;
+ &:hover{
+    
+   border-color:rgba(85, 103, 14, 1);
+ }
+`
 
 
 function Checkout() {

@@ -58,7 +58,10 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:18px;
-font-weight:600
+font-weight:600;
+@media only screen and (max-width:420px){
+   font-size:16px;
+}
 `
 const Price=styled.p`
 flex:1;
@@ -66,7 +69,11 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:18px;
-font-weight:600
+font-weight:600;
+@media only screen and (max-width:420px){
+   font-size:16px;
+}
+
 
 `
 
@@ -79,7 +86,7 @@ flex:1;
 const ButtonDecrease=styled.p`
 font-size:38px;
 color:green;
-padding:12px;
+padding:10px;
 cursor:pointer;
 `
 
@@ -89,7 +96,7 @@ const Qty=styled.p`
 `
 const ButtonIncrease=styled.p`
   font-size:38px;
-  padding:12px;
+  padding:10px;
   color:green;
   cursor:pointer;
 `

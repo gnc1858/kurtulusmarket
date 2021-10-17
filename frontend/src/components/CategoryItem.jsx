@@ -1,4 +1,4 @@
-import React,{useState,useContext}  from 'react'
+import React,{useContext}  from 'react'
 import styled from  "styled-components"
 import {useHistory} from "react-router-dom"
 import {InitialState,UpdateState} from "../context/Context"
@@ -17,19 +17,38 @@ const Item=styled.div`
  flex-direction:column;
  border:2px solid #1996bf;
  border-radius:8px;
+
+ @media only screen and (max-width:680px){
+   height:340px;
+   width:240px;
+}
 `
 const Title=styled.h2`
  font-size:24px;
+
+ @media only screen and (max-width:680px){
+   font-size:20px;
+}
+ @media only screen and (max-width:420px){
+   font-size:18px;
+}
 `
 
 const Image=styled.img`
 height:240px;
+@media only screen and (max-width:680px){
+   height:180px;
+}
 `
 
 const Price=styled.p`
  font-size:20px;
  padding:5px;
 font-weight:bold;
+
+@media only screen and (max-width:680px){
+  font-size:18px;
+}
 `
 const Button=styled.button`
  font-size:20px;
@@ -43,6 +62,10 @@ const Button=styled.button`
  &:hover{
    border-color:#e8a156;
  }
+
+ @media only screen and (max-width:680px){
+  font-size:18px;
+}
  `
 
 

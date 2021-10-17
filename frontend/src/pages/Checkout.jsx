@@ -1,5 +1,5 @@
-import React,{useContext,useState} from 'react'
-import {InitialState,UpdateState} from "../context/Context"
+import React,{useContext} from 'react'
+import {InitialState} from "../context/Context"
 import styled from "styled-components"
 import {items} from "../data"
 import CheckoutItem from "./CheckoutItem"
@@ -11,6 +11,10 @@ const Container=styled.div`
  min-height:100vh;
  width:100%;
   background:${props=>(props.theme==="light" ? "rgba(239, 240, 240, 0.74)":"rgba(116, 122, 137, 0.91)")};
+
+ @media only screen and (max-width:768px){
+  flex-direction:column;
+}
 `
 
 const Items=styled.div`
@@ -22,6 +26,13 @@ flex:3;
 const Summary=styled.div`
 flex:1;
 padding:10px;
+
+ @media only screen and (max-width:768px){
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+}
 `
 
 const Total=styled.div`
@@ -43,6 +54,14 @@ const Button=styled.button`
     
    border-color:rgba(85, 103, 14, 1);
  }
+
+ @media only screen and (max-width:768px){
+    font-size:20px;
+    padding:5px;
+
+}
+
+
 `
 
 

@@ -1,4 +1,4 @@
-import React,{useContext,useState} from 'react'
+import React,{useContext} from 'react'
 import styled from "styled-components"
 import {Link,useHistory} from "react-router-dom"
 
@@ -14,8 +14,9 @@ import {UpdateState,InitialState} from "../context/Context"
 const Container=styled.div`
  width: 100vw;
  height: 60px;
- background-color:${props=>(props.theme==="light" ? "rgba(239, 240, 240, 0.74)":"rgba(116, 122, 137, 0.91)")};
+
  border-bottom:2px solid #46484d;
+ background-color:${props=>(props.theme==="light" ? "var(--theme-light)" :"var(--theme-dark)")};
  
 
 `
@@ -44,7 +45,24 @@ const Logo=styled.h1`
 font-weight:600;
 color:rgba(35, 103, 124, 1);
 font-size:40px;
+@media only screen and (max-width:1000px){
+   font-size:36px;
+}
 
+@media only screen and (max-width:840px){
+   font-size:32px;
+}
+
+@media only screen and (max-width:640px){
+   font-size:28px;
+}
+
+@media only screen and (max-width:420px){
+   font-size:24px;
+}
+@media only screen and (max-width:320px){
+   font-size:20px;
+}
 
 `
 

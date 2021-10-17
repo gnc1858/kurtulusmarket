@@ -2,7 +2,6 @@ import React,{useEffect} from 'react'
 import {useHistory} from "react-router-dom";
 import styled from "styled-components"
 
-import createSvgIcon from "@material-ui/icons/utils/createSvgIcon";
 
 
 const Container=styled.div`
@@ -21,7 +20,7 @@ width:400px;
 margin:20px;
 `
 
-const LogoutIcon = createSvgIcon()
+
 
 function Admin() {
   const history = useHistory()
@@ -32,7 +31,7 @@ function Admin() {
       history.push("/")
    }
 
- },[userInfo])
+ },[userInfo,history])
   
 
   

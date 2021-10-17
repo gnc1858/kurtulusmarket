@@ -9,13 +9,19 @@ const Wrapper=styled.li`
 
 
  padding:20px;
- display:flex;
+ display:flex; 
+  @media only screen and (max-width:768px){
+  padding:10px;
+}
 
 
 `
 const Item=styled.div`
 display:flex;
 flex:1;
+align-items:center;
+justify-content:center;
+
 
 `
 
@@ -25,6 +31,15 @@ width:180px;
 margin-left:10px;
 margin-right:10px;
 flex:1;
+@media only screen and (max-width:768px){
+ height:90px;
+ width:120px;
+}
+
+@media only screen and (max-width:420px){
+ height:60px;
+ width:90px;
+}
 `
 
 
@@ -86,7 +101,7 @@ const CheckoutItem = ({ıtem}) => {
   const update=useContext(UpdateState)
 
   const [qty,setQty]=useState(1)
-  const [total,setTotal]=useState(0)
+  //const [total,setTotal]=useState(0)
  
 
   function handleClick(action){

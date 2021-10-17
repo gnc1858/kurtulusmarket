@@ -161,7 +161,7 @@ const Login = () => {
 
  const update=useContext(UpdateState)
 
- const regex=RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")
+ const regex=RegExp("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
 
  
  

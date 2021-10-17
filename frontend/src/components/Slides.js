@@ -24,13 +24,26 @@ const Arrow=styled.div`
  align-items:center;
  cursor:pointer;
  position:absolute;
- top:0;
- bottom:0;
+ top:40%;
+ 
  left:${props=>props.direction==="left" && "10px"};
  right:${props=>props.direction==="right" && "10px"};
  opacity:0.8;
  margin:auto;
  z-index:2;
+
+  @media only screen and (max-width:1000px){
+  top:30%;
+}
+
+  @media only screen and (max-width:680px){
+  top:20%;
+}
+
+ @media only screen and (max-width:480px){
+  top:15%;
+}
+
 
 `
 //🦘 
@@ -60,25 +73,55 @@ const ImageContainer=styled.div`
  height:100%;
 `
 const Image=styled.img`
-height:80%;
- 
+height:70%;
+@media only screen and (max-width:1000px){
+   height:60%;
+   
+}
+
+@media only screen and (max-width:840px){
+   height:50%;
+}
+@media only screen and (max-width:680px){
+   height:35%;
+}
+@media only screen and (max-width:480px){
+   height:25%;
+}
 `
 //--
 const DescContainer=styled.div`
   flex:1;
-  padding:50px;
+  padding:30px;
   height:100%;
 `
 
 const Title=styled.h1`
 font-size:70px;
 font-weight:bold;
+@media only screen and (max-width:1000px){
+   font-size:50px;
+}
+
+@media only screen and (max-width:840px){
+   font-size:40px;
+}
+@media only screen and (max-width:680px){
+  font-size:32px;
+}
+@media only screen and (max-width:480px){
+   height:26px;
+}
   
 `
 const Desc=styled.p`
-  margin:50px 0;
-  font-size:20px;
-  letter-space:2px;
+  margin-top:50px;
+  font-size:28px;
+  letter-spacing:1px;
+  font-weight:560;
+  @media only screen and (max-width:680px){
+   font-size:20px;
+}
 
 `
 

@@ -58,7 +58,7 @@ font-size:40px;
 }
 
 @media only screen and (max-width:420px){
-   font-size:24px;
+   font-size:22px;
 }
 @media only screen and (max-width:320px){
    font-size:20px;
@@ -80,12 +80,18 @@ const MenuItem=styled.div`
  font-size:20px;
  font-weight:550;
  cursor:pointer;
- margin-left:25px;
+ margin-left:20px;
  padding:8px;
  border-radius:5px;
  &:hover{
      background-color:rgba(161, 226, 195, 0.5);
  }
+ @media only screen and (max-width:420px){
+   font-size:18px;
+   margin-left:8px;
+   padding:4px;
+
+}
 `
 
 
